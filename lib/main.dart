@@ -22,128 +22,227 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Atendimento digital'),
-        actions: <Widget>[
-          IconButton(
-              onPressed: () {
-                showModalBottomSheet(
-                    context: context,
-                    builder: (BuildContext context) {
-                      return SizedBox(
-                          height: 300,
-                          child: Padding(
-                            padding: const EdgeInsets.all(28),
-                            child: Column(
-                              mainAxisSize: MainAxisSize.min,
-                              children: <Widget>[
-                                Row(
-                                  children: [
-                                    const Text(
-                                      'Anderson Andrade Silva',
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 18),
-                                    ),
-                                    const Spacer(),
-                                    IconButton(
-                                        onPressed: () => Navigator.pop(context),
-                                        icon: const Icon(Icons.close))
-                                  ],
-                                ),
-                                const SizedBox(
-                                  height: 15,
-                                ),
-                                const Row(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      Icon(Icons.star_rate_outlined),
-                                      SizedBox(
-                                        width: 5,
-                                      ),
-                                      Text(
-                                        '5',
-                                        style: TextStyle(
-                                            fontSize: 18,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      SizedBox(
-                                        width: 5,
-                                      ),
-                                      Text(
-                                        '(2 avaliações)',
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.w300),
-                                      )
-                                    ]),
-                                const SizedBox(
-                                  height: 15,
-                                ),
-                                const Row(
-                                  children: [
-                                    Text(
-                                      'anderson_andrade_@outlook.com',
-                                    )
-                                  ],
-                                ),
-                                const SizedBox(
-                                  height: 15,
-                                ),
-                                const Row(
-                                  children: [Text('Cooperativa: 9805 PA: 0')],
-                                ),
-                                const SizedBox(
-                                  height: 15,
-                                ),
-                                Row(
-                                  children: [
-                                    Chip(
-                                      label: Row(
+    return DefaultTabController(
+        length: 2,
+        child: Scaffold(
+            body: Column(
+          children: [
+            Container(
+              color: Colors.purple,
+              padding: EdgeInsets.only(top: MediaQuery.of(context).padding.top),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    'Atendimento digital',
+                    style: TextStyle(
+                        fontSize: 16,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  IconButton(
+                    onPressed: () {
+                      showModalBottomSheet(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return SizedBox(
+                                height: 300,
+                                child: Padding(
+                                  padding: const EdgeInsets.all(28),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: <Widget>[
+                                      Row(
                                         children: [
                                           const Text(
-                                            'Indisponível',
+                                            'Anderson Andrade Silva',
                                             style: TextStyle(
-                                                color: Colors.deepOrange),
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 18),
                                           ),
-                                          const SizedBox(
-                                            width: 5,
-                                          ),
-                                          Container(
-                                            width: 10,
-                                            height: 10,
-                                            decoration: const BoxDecoration(
-                                                color: Colors.orange,
-                                                shape: BoxShape.circle),
+                                          const Spacer(),
+                                          IconButton(
+                                              onPressed: () =>
+                                                  Navigator.pop(context),
+                                              icon: const Icon(Icons.close))
+                                        ],
+                                      ),
+                                      const SizedBox(
+                                        height: 15,
+                                      ),
+                                      const Row(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            Icon(Icons.star_rate_outlined),
+                                            SizedBox(
+                                              width: 5,
+                                            ),
+                                            Text(
+                                              '5',
+                                              style: TextStyle(
+                                                  fontSize: 18,
+                                                  fontWeight: FontWeight.bold),
+                                            ),
+                                            SizedBox(
+                                              width: 5,
+                                            ),
+                                            Text(
+                                              '(2 avaliações)',
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.w300),
+                                            )
+                                          ]),
+                                      const SizedBox(
+                                        height: 15,
+                                      ),
+                                      const Row(
+                                        children: [
+                                          Text(
+                                            'anderson_andrade_@outlook.com',
                                           )
                                         ],
                                       ),
-                                      backgroundColor: const Color.fromARGB(
-                                          255, 253, 227, 187),
-                                      shape: RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(50),
-                                          side: const BorderSide(
-                                              color: Colors.transparent)),
-                                    ),
-                                    const Spacer(),
-                                    const Text(
-                                      '6 de jul. 28m 35s',
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.w200),
-                                    )
-                                  ],
-                                )
-                              ],
-                            ),
-                          ));
-                    });
-              },
-              icon: const Icon(Icons.menu))
-        ],
-      ),
-      body: Container(),
+                                      const SizedBox(
+                                        height: 15,
+                                      ),
+                                      const Row(
+                                        children: [
+                                          Text('Cooperativa: 9805 PA: 0')
+                                        ],
+                                      ),
+                                      const SizedBox(
+                                        height: 15,
+                                      ),
+                                      Row(
+                                        children: [
+                                          Chip(
+                                            label: Row(
+                                              children: [
+                                                const Text(
+                                                  'Indisponível',
+                                                  style: TextStyle(
+                                                      color: Colors.deepOrange),
+                                                ),
+                                                const SizedBox(
+                                                  width: 5,
+                                                ),
+                                                Container(
+                                                  width: 10,
+                                                  height: 10,
+                                                  decoration:
+                                                      const BoxDecoration(
+                                                          color: Colors.orange,
+                                                          shape:
+                                                              BoxShape.circle),
+                                                )
+                                              ],
+                                            ),
+                                            backgroundColor:
+                                                const Color.fromARGB(
+                                                    255, 253, 227, 187),
+                                            shape: RoundedRectangleBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(50),
+                                                side: const BorderSide(
+                                                    color: Colors.transparent)),
+                                          ),
+                                          const Spacer(),
+                                          const Text(
+                                            '6 de jul. 28m 35s',
+                                            style: TextStyle(
+                                                fontWeight: FontWeight.w200),
+                                          )
+                                        ],
+                                      )
+                                    ],
+                                  ),
+                                ));
+                          });
+                    },
+                    icon: const Icon(Icons.menu),
+                    color: Colors.white,
+                  )
+                ],
+              ),
+            ),
+            const Padding(
+              padding: EdgeInsets.all(16),
+              child: Text(
+                'PLAD',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
+            ),
+            const TabBar(tabs: [
+              Tab(
+                child: Badge(
+                  child: Text('Em andamento'),
+                  value: '10',
+                ),
+              ),
+              Tab(
+                child: Text('second tab'),
+              )
+            ]),
+            Expanded(
+                child: TabBarView(
+              children: [
+                Container(
+                    child: const Center(
+                  child: Text('hello'),
+                )),
+                Container(
+                  child: const Text(''),
+                ),
+              ],
+            )),
+            Container(
+                height: 104,
+                color: Colors.greenAccent,
+                child: const Text('bottom'))
+          ],
+        )));
+  }
+}
+
+class Badge extends StatelessWidget {
+  final Widget child;
+  final String value;
+  final Color color;
+
+  const Badge(
+      {Key? Key,
+      required this.child,
+      required this.value,
+      this.color = Colors.red})
+      : super(key: Key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      alignment: Alignment.center,
+      children: [
+        child,
+        Positioned(
+          right: 0,
+          top: 0,
+          child: Container(
+            padding: const EdgeInsets.all(4),
+            decoration: BoxDecoration(
+              color: color,
+              borderRadius: BorderRadius.circular(12),
+            ),
+            constraints: const BoxConstraints(minWidth: 12, minHeight: 12),
+            child: Center(
+              child: Text(
+                value,
+                style: const TextStyle(color: Colors.white, fontSize: 9),
+                textAlign: TextAlign.center,
+              ),
+            ),
+          ),
+        )
+      ],
     );
   }
 }
