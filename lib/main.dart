@@ -205,6 +205,40 @@ class MyHomePage extends StatelessWidget {
   }
 }
 
+class AssistanceItem extends StatelessWidget {
+  final String name;
+  final String typeAssistance;
+  final String origin;
+
+  AssistanceItem({
+    Key? key,
+    required this.name,
+    required this.typeAssistance,
+    required this.origin,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
+          children: [
+            Badge(
+              child: Text(name),
+              value: '2',
+            ),
+            SizedBox(width: 8),
+            Text(typeAssistance),
+          ],
+        ),
+        SizedBox(height: 4),
+        Text(origin),
+      ],
+    );
+  }
+}
+
 class Badge extends StatelessWidget {
   final Widget child;
   final String value;
