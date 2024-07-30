@@ -188,8 +188,15 @@ class MyHomePage extends StatelessWidget {
                 child: TabBarView(
               children: [
                 Container(
-                    child: const Center(
-                  child: Text('hello'),
+                    child: Center(
+                  child: Column(
+                    children: [
+                      AssistanceItem(
+                          name: 'Anderson Andrade',
+                          typeAssistance: 'Ativo',
+                          origin: 'coopera')
+                    ],
+                  ),
                 )),
                 Container(
                   child: const Text(''),
@@ -222,18 +229,30 @@ class AssistanceItem extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Row(
-          children: [
-            Badge(
-              child: Text(name),
-              value: '2',
-            ),
-            SizedBox(width: 8),
-            Text(typeAssistance),
-          ],
-        ),
-        SizedBox(height: 4),
-        Text(origin),
+        Padding(
+          padding: EdgeInsets.all(12),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  Badge(
+                    child: Text(name),
+                    value: '2',
+                  ),
+                  Spacer(),
+                  SizedBox(width: 8),
+                  Text(typeAssistance),
+                ],
+              ),
+              SizedBox(height: 16),
+              Text(
+                origin,
+                textAlign: TextAlign.center,
+              ),
+            ],
+          ),
+        )
       ],
     );
   }
@@ -258,8 +277,8 @@ class Badge extends StatelessWidget {
       children: [
         child,
         Positioned(
-          right: 0,
-          top: 0,
+          right: -16,
+          top: -16,
           child: Container(
             padding: const EdgeInsets.all(4),
             decoration: BoxDecoration(
